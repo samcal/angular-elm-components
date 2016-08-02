@@ -8,8 +8,8 @@ It works just like Evan Czaplicki's [react-elm-components](https://github.com/ev
 In your main file:
 ```js
 // app/main.js
-var angular = require('angular'),
-    require('angular-elm-components');
+var angular = require('angular');
+require('angular-elm-components');
 
 var app = angular.module('app', [ 'angularElmComponents' ]);
 ```
