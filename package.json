@@ -1,0 +1,27 @@
+{
+  "name": "angular-elm-components",
+  "version": "0.1.0",
+  "description": "Write Angular components in Elm",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "peerDependencies": {
+      "angular": "1.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samcal/angular-elm-components.git"
+  },
+  "keywords": [
+    "angular",
+    "elm",
+    "components"
+  ],
+  "author": "Sam Calvert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samcal/angular-elm-components/issues"
+  },
+  "homepage": "https://github.com/samcal/angular-elm-components#readme"
+}
