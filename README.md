@@ -18,7 +18,7 @@ Now, you will have access to the `elmComponent` directive:
 
 ```js
 // app/components/example_controller.js
-$scope.elmTodoComponent = require('../../dist/elm/todomvc.js');
+$scope.elmTodoComponent = require('../../dist/elm/todomvc.js').Todo;
 ```
 
 ```html
