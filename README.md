@@ -61,8 +61,8 @@ $scope.elmTodoSetupPorts = function (ports) {
         console.log(n);
     });
 
-    ports.todos.send("Invent the Universe");
-    ports.todos.send("Bake an Apple Pie");
+    ports.todos.send('Invent the Universe');
+    ports.todos.send('Bake an Apple Pie');
 };
 ```
 
