@@ -13,7 +13,7 @@ angular.module('angularElmComponents', [])
                 var app = scope.src.embed(element[0], scope.flags);
 
                 if (scope.ports !== undefined) {
-                    scope.ports(app.ports);
+                    scope.ports({ ports: app.ports });
                 }
             }
         };
