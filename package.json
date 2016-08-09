@@ -19,7 +19,7 @@
     "components"
   ],
   "author": "Sam Calvert",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/samcal/angular-elm-components/issues"
   },
