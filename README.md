@@ -23,7 +23,8 @@ $scope.elmTodoComponent = require('../../dist/elm/todomvc.js').Todo;
 
 ```html
 <!-- app/components/example.html -->
-<elm-component src="elmTodoComponent">
+<elm-component
+  src="elmTodoComponent">
 </elm-component>
 ```
 
@@ -39,7 +40,9 @@ $scope.elmTodoFlags = { todos: ['Get Milk', 'Do Laundry'] };
 
 ```html
 <!-- app/components/example.html -->
-<elm-component src="elmTodoComponent" flags="elmTodoFlags">
+<elm-component
+  src="elmTodoComponent"
+  flags="elmTodoFlags">
 </elm-component>
 ```
 
@@ -65,6 +68,9 @@ $scope.elmTodoSetupPorts = function (ports) {
 
 ```html
 <!-- app/components/example.html -->
-<elm-component src="elmTodoComponent" flags="elmTodoFlags" ports="elmTodoSetupPorts(ports)">
+<elm-component
+  src="elmTodoComponent"
+  flags="elmTodoFlags"
+  ports="elmTodoSetupPorts(ports)">
 </elm-component>
 ```
