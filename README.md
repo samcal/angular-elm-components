@@ -74,3 +74,7 @@ $scope.elmTodoSetupPorts = function (ports) {
   ports="elmTodoSetupPorts(ports)">
 </elm-component>
 ```
+
+### Releases
+
+* 0.2.0 - Add support for global `angular` in non-browserify (`require`) environments.
