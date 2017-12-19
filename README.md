@@ -63,6 +63,15 @@ $scope.elmTodoSetupPorts = function (ports) {
 
     ports.todos.send('Invent the Universe');
     ports.todos.send('Bake an Apple Pie');
+
+    var deregisterTodoAdded = $rootScope.$on('todoAdded', function todoAdded(todoItem) {
+        ports.todos.send(todoItem);
+    });
+
+    // If there are things to clean up, return a function that cleans them up.
+    return function cleanUp() {
+        deregisterTodoAdded();
+    };
 };
 ```
 
