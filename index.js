@@ -1,20 +1,20 @@
-var angular = require('angular');
+(function angularElmComponents(angular) {
+   angular.module('angularElmComponents', [])
+       .directive('elmComponent', function () {
+           return {
+               template: '<div></div>',
+               scope: {
+                   src: '=',
+                   flags: '=',
+                   ports: '&'
+               },
+               link: function (scope, element) {
+                   var app = scope.src.embed(element[0], scope.flags);
 
-angular.module('angularElmComponents', [])
-    .directive('elmComponent', function () {
-        return {
-            template: '<div></div>',
-            scope: {
-                src: '=',
-                flags: '=',
-                ports: '&'
-            },
-            link: function (scope, element) {
-                var app = scope.src.embed(element[0], scope.flags);
-
-                if (scope.ports !== undefined) {
-                    scope.ports({ ports: app.ports });
-                }
-            }
-        };
-    });
+                   if (scope.ports !== undefined) {
+                       scope.ports({ ports: app.ports });
+                   }
+               }
+           };
+       });
+})(angular || require('angular'));
