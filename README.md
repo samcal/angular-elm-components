@@ -33,7 +33,7 @@ $scope.elmTodoComponent = require('../../dist/elm/todomvc.js').Todo;
 In order to give your elm app some flags on startup to initialize its state, use the `flags` attribute on the `elm-component` directive. It takes an object:
 
 ```js
-// app/componenets/example_controller.js
+// app/components/example_controller.js
 $scope.elmTodoComponent = require('../../dist/elm/todomvc.js').Todo;
 $scope.elmTodoFlags = { todos: ['Get Milk', 'Do Laundry'] };
 ```
@@ -53,7 +53,7 @@ These flags give you the flexibility to set up an initial state in Javascript fi
 Changes to the `flags` attribute after the Elm component has been initialized will **not** affect the component in any way. In order to interop between your Javascript and Elm, use `ports` instead. Ports allow your Javascript to send values to, and subscribe to values from, your Elm component.
 
 ```js
-// app/componenets/example_controller.js
+// app/components/example_controller.js
 $scope.elmTodoComponent = require('../../dist/elm/todomvc.js').Todo;
 $scope.elmTodoFlags = { todos: ['Get Milk', 'Do Laundry'] };
 $scope.elmTodoSetupPorts = function (ports) {
@@ -63,6 +63,15 @@ $scope.elmTodoSetupPorts = function (ports) {
 
     ports.todos.send('Invent the Universe');
     ports.todos.send('Bake an Apple Pie');
+
+    var deregisterTodoAdded = $rootScope.$on('todoAdded', function todoAdded(todoItem) {
+        ports.todos.send(todoItem);
+    });
+
+    // If there are things to clean up, return a function that cleans them up.
+    return function cleanUp() {
+        deregisterTodoAdded();
+    };
 };
 ```
 
@@ -77,4 +86,5 @@ $scope.elmTodoSetupPorts = function (ports) {
 
 ### Releases
 
+* 0.3.0 - Add support for Elm 0.19 and a `$destroy` clean-up function.
 * 0.2.0 - Add support for global `angular` in non-browserify (`require`) environments.
